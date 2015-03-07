@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="testApp">
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Test App</title>
+    </head>
+    <body ng-view test-app>
+        <h1 ng-bind="testApp.title"></h1>
+
+        <!-- 1. Wrap the lazy directive with a lazy-load directive (to download the module) -->
+        <div oc-lazy-load="['lazyDirective/lazyDirective.js']">
+            <!-- 2. Add the code that should be used -->
+            <lazy-directive></lazy-directive>
+        </div>
+
+        <script src="../node_modules/angular/angular.js"></script>
+        <script src="../node_modules/oclazyload/dist/ocLazyLoad.js"></script>
+        <script src="services.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
